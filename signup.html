@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up - AGRIVERSE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+  <link rel="icon" href="logo.jpg">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+
+  <div class="su-page-bg">
+    <div class="su-card">
+
+      <div class="su-banner">
+        <img src="sign.png" alt="Farm banner" />
+      </div>
+
+      <div class="su-body">
+
+        <div class="su-header">
+          <h1>Sign Up</h1>
+          <p>Register to track your crops and manage from home easily.</p>
+        </div>
+
+        <div class="su-steps">
+          <div class="su-step su-step-active">
+            <div class="su-step-icon">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="su-step-label">Step 1<br><small>User Details</small></span>
+          </div>
+
+          <div class="su-step">
+            <div class="su-step-circle"></div>
+            <span class="su-step-label">Step 2<br><small>Password</small></span>
+          </div>
+
+          <div class="su-step">
+            <div class="su-step-circle"></div>
+            <span class="su-step-label">Step 3<br><small>Cultivation</small></span>
+          </div>
+        </div>
+
+        <div class="su-profile">
+          <h3>Profile Picture</h3>
+          <p>Add a profile picture</p>
+
+          <div class="su-avatar-wrap">
+            <label for="profileInput" class="su-avatar">
+              <img id="profilePreview" src="" alt="" style="display:none;" />
+              <i id="profileIcon" class="fa-regular fa-user"></i>
+            </label>
+          </div>
+
+          <label for="profileInput" class="su-upload-link">Upload Image</label>
+          <input type="file" id="profileInput" accept="image/*" hidden />
+        </div>
+
+        <form id="signupForm" class="su-form">
+
+          <div class="su-field">
+            <label for="name"><i class="fa-regular fa-user"></i> Full Name</label>
+            <input id="name" type="text" placeholder="Enter your full name" required />
+          </div>
+
+          <div class="su-field">
+            <label for="email"><i class="fa-regular fa-envelope"></i> Email address</label>
+            <input id="email" type="email" placeholder="Enter your email address" required />
+          </div>
+
+          <div class="su-field su-field-row">
+            <div class="su-country-code">
+              <span class="su-flag">🇮🇳</span>
+              <span class="su-code">+91 ▾</span>
+            </div>
+            <input id="phone" type="tel" maxlength="10" placeholder="Mobile Number" required />
+          </div>
+
+          <p class="su-bottom-text">
+            Already registered?
+            <a href="login.html" class="su-link">Login</a>
+          </p>
+
+          <button type="submit" class="su-btn-main">Continue</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPORTANT: use module -->
+  <script type="module" src="signup.js"></script>
+
+</body>
+</html>

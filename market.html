@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace | Agriverse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="market-shared.css">
+    <link rel="stylesheet" href="market.css">
+</head>
+<body>
+    
+    <!-- Page Banner -->
+    <div class="market-banner">
+        <h1>Agricultural Marketplace</h1>
+        <p>Connect farmers with buyers for fresh, water-smart produce</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="market-tabs">
+    <button class="tab active" onclick="window.location.href='market.html'">Browse Listings</button>
+    <button class="tab" onclick="window.location.href='yield.html'">Post Yield</button>
+    <button class="tab" onclick="window.location.href='myorders.html'">My Orders</button>
+    <button class="tab" onclick="window.location.href='mysale.html'">My Sales</button>
+    </div>
+
+
+    <main class="page-main">
+        <!-- Filters -->
+        <section class="page-section filter-section">
+            <div class="section-header">
+                <i class="fa-solid fa-filter"></i>
+                <span>Filters</span>
+            </div>
+            <div class="filter-container">
+                <div>
+                    <label>Crop Type</label>
+                    <select id="cropFilter">
+                        <option value="all">All Crops</option>
+                        <option value="Cabbage">Cabbage</option>
+                        <option value="Cauliflower">Cauliflower</option>
+                        <option value="Cardamom">Cardamom</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Location</label>
+                    <input type="text" id="locationFilter" placeholder="Search location...">
+                </div>
+                <div>
+                    <label>Min Price (₹/kg)</label>
+                    <input type="number" id="minPriceFilter" value="0">
+                </div>
+                <div>
+                    <label>Max Price (₹/kg)</label>
+                    <input type="number" id="maxPriceFilter" value="1000">
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="page-section listing-section">
+            <div class="section-header">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Available Listings</span>
+            </div>
+            <div class="product-grid" id="productGrid">
+            <!-- Cabbage -->
+            <div class="product-card" data-crop="Cabbage" data-location="Jorethang" data-price="15">
+                <div class="product-image">
+                    <img src="cabbage.png" alt="Cabbage">
+                    <span class="status-badge">Available</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-header">
+                        <h3>Cabbage</h3>
+                        <span class="price">₹ 15/kg</span>
+                    </div>
+                    <ul class="product-info">
+                        <li>📦 250kg available</li>
+                        <li>👤 Farmer1</li>
+                        <li>📍 Jorethang, Sikkim</li>
+                        <li>🗓 Harvested: 5/2/2025</li>
+                    </ul>
+                    <p class="description">Fresh organic cabbage</p>
+                    <button class="order-btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+            </div>
+
+            <!-- Cauliflower -->
+            <div class="product-card" data-crop="Cauliflower" data-location="Gangtok" data-price="25">
+                <div class="product-image">
+                    <img src="cauliflower.png" alt="Cauliflower">
+                    <span class="status-badge">Available</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-header">
+                        <h3>Cauliflower</h3>
+                        <span class="price">₹ 25/kg</span>
+                    </div>
+                    <ul class="product-info">
+                        <li>📦 180kg available</li>
+                        <li>👤 Farmer2</li>
+                        <li>📍 Gangtok, Sikkim</li>
+                        <li>🗓 Harvested: 3/2/2025</li>
+                    </ul>
+                    <p class="description">Premium quality cauliflower</p>
+                    <button class="order-btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+            </div>
+
+            <!-- Paddy -->
+            <div class="product-card" data-crop="Cardamom"data-location="Namchi" data-price="30">
+                <div class="product-image">
+                    <img src="cardamom.png" alt="Paddy">
+                    <span class="status-badge">Available</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-header">
+                        <h3>Cardamom</h3>
+                        <span class="price">₹ 30/kg</span>
+                    </div>
+                    <ul class="product-info">
+                        <li>📦 500kg available</li>
+                        <li>👤 Farmer3</li>
+                        <li>📍 Namchi, Sikkim</li>
+                        <li>🗓 Harvested: 28/1/2025</li>
+                    </ul>
+                    <p class="description">High-yield paddy rice</p>
+                    <button class="order-btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+            </div>
+            <div class="product-card" data-crop="Ginger"data-location="Namchi" data-price="30">
+                <div class="product-image">
+                    <img src="ginger.png" alt="ginger">
+                    <span class="status-badge">Available</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-header">
+                        <h3>Ginger</h3>
+                        <span class="price">₹ 20/kg</span>
+                    </div>
+                    <ul class="product-info">
+                        <li>📦 500kg available</li>
+                        <li>👤 Farmer3</li>
+                        <li>📍 Namchi, Sikkim</li>
+                        <li>🗓 Harvested: 2/2/2025</li>
+                    </ul>
+                    <p class="description">High-yield paddy rice</p>
+                    <button class="order-btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer class="monitor-footer">
+    <div class="footer-item" onclick="navigate('dashboard.html')">
+        <i class="fa-solid fa-table-cells"></i>
+        <span>Dashboard</span>
+    </div>
+    <div class="footer-item" onclick="navigate('monitor.html')">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Insights</span>
+    </div>
+    <div class="footer-item" onclick="navigate('market.html')">
+        <i class="fa-solid fa-shopping-cart"></i>
+        <span>Market</span>
+    </div>
+    <div class="footer-item" onclick="navigate('alert.html')">
+        <i class="fa-solid fa-bell"></i>
+        <span>Alerts</span>
+    </div>
+    </footer>
+
+    <script src="market.js"></script>
+    <script>
+    function navigate(page) {
+    window.location.href = page;
+    }
+</script>
+
+</body>
+</html>

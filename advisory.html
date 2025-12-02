@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advisory | AGRIVERSE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="advisory.css">
+</head>
+<body>
+
+<div class="advisory-container">
+    <h1 class="title">Insights & Analysis</h1>
+
+    <!-- Tabs -->
+    <div class="monitor-tabs">
+        <button class="tab" onclick="navigate('pest.html')">Pest</button>
+        <button class="tab" onclick="navigate('fertilizer.html')">Fertilizer</button>
+        <button class="tab active">Advisory</button>
+    </div>
+
+    <!-- Advisory Section -->
+    <div class="advisory-section">
+        <div class="header-section">
+            <h2 class="section-header"><i class="fa-solid fa-seedling"></i> Farmer Advisory</h2>
+            <p class="subtitle">Sikkim-specific recommendations</p>
+        </div>
+
+    <!-- Location Details Form -->
+    <div class="location-card">
+        <h2 class="card-title">Your Location Details</h2>
+        
+        <form id="advisoryForm">
+            <div class="form-group">
+                <label for="region">Region</label>
+                <select id="region" name="region" required>
+                    <option value="" disabled selected>Select region</option>
+                    <option value="East Sikkim">East Sikkim</option>
+                    <option value="West Sikkim">West Sikkim</option>
+                    <option value="North Sikkim">North Sikkim</option>
+                    <option value="South Sikkim">South Sikkim</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="altitude">Altitude (meters)</label>
+                <input type="number" id="altitude" name="altitude" placeholder="e.g., 1200" required>
+            </div>
+
+            <div class="form-group">
+                <label for="soilType">Soil Type</label>
+                <select id="soilType" name="soilType" required>
+                    <option value="" disabled selected>Select soil type</option>
+                    <option value="Loamy">Loamy</option>
+                    <option value="Clay">Clay</option>
+                    <option value="Sandy">Sandy</option>
+                    <option value="Sandy Loam">Sandy Loam</option>
+                    <option value="Clay Loam">Clay Loam</option>
+                    <option value="Red Soil">Red Soil</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <i class="fa-solid fa-seedling"></i> Get Recommendations
+            </button>
+        </form>
+    </div>
+
+    <!-- Recommendations Display -->
+    <div id="recommendations" class="recommendations-section" style="display: none;">
+        <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Recommendations</h2>
+        
+        <div class="recommendation-card">
+            <div class="rec-header">
+                <i class="fa-solid fa-calendar"></i>
+                <h3>Best Season</h3>
+            </div>
+            <p id="seasonInfo" class="rec-content"></p>
+        </div>
+
+        <div class="recommendation-card">
+            <div class="rec-header">
+                <i class="fa-solid fa-seedling"></i>
+                <h3>Recommended Crops</h3>
+            </div>
+            <div id="cropsInfo" class="rec-content"></div>
+        </div>
+
+        <div class="recommendation-card">
+            <div class="rec-header">
+                <i class="fa-solid fa-clock"></i>
+                <h3>Optimal Timing</h3>
+            </div>
+            <p id="timingInfo" class="rec-content"></p>
+        </div>
+
+        <div class="recommendation-card">
+            <div class="rec-header">
+                <i class="fa-solid fa-info-circle"></i>
+                <h3>Additional Tips</h3>
+            </div>
+            <p id="tipsInfo" class="rec-content"></p>
+        </div>
+    </div>
+    </div>
+</div>
+
+<footer class="monitor-footer">
+    <div class="footer-item" onclick="navigate('dashboard.html')">
+        <i class="fa-solid fa-table-cells"></i>
+        <span>Dashboard</span>
+    </div>
+    <div class="footer-item" onclick="navigate('monitor.html')">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Insights</span>
+    </div>
+    <div class="footer-item" onclick="navigate('market.html')">
+      <i class="fa-solid fa-shopping-cart"></i>
+      <span>Market</span>
+    </div>
+    <div class="footer-item" onclick="navigate('alerts.html')">
+        <i class="fa-solid fa-bell"></i>
+        <span>Alerts</span>
+    </div>
+</footer>
+
+<script src="advisory.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up – Step 3 | AGRIVERSE</title>
+  <link rel="stylesheet" href="signup.css">
+  <link rel="icon" href="logo.jpg">
+</head>
+<body>
+
+<div class="su-page-bg">
+  <div class="su-card">
+
+    <div class="su-banner">
+      <img src="sign.png" alt="Cultivation">
+    </div>
+
+    <div class="su-body">
+      <div class="su-header">
+        <h1>Sign Up</h1>
+        <p>Tell us about your cultivation to personalize your dashboard.</p>
+      </div>
+
+      <div class="su-steps">
+        <div class="su-step"><div class="su-step-icon">✔</div><div class="su-step-label">Step 1<br><small>User Details</small></div></div>
+        <div class="su-step"><div class="su-step-icon">✔</div><div class="su-step-label">Step 2<br><small>Password</small></div></div>
+        <div class="su-step su-step-active"><div class="su-step-icon">✔</div><div class="su-step-label">Step 3<br><small>Cultivation</small></div></div>
+      </div>
+
+      <form id="signupStep3Form" class="su-form">
+
+        <div class="su-field">
+          <label for="primaryCrop">Primary Crop</label>
+          <select id="primaryCrop" required>
+            <option value="" disabled selected>Select crop</option>
+            <option value="Paddy">Paddy</option>
+            <option value="Cardamom">Cardamom</option>
+            <option value="Cabbage">Cabbage</option>
+            <option value="Sugarcane">Sugarcane</option>
+          </select>
+        </div>
+
+        <div class="su-field">
+          <label>Number of Fields</label>
+          <div class="field-count-container">
+            <button type="button" class="field-count-btn active" data-count="1">1</button>
+            <button type="button" class="field-count-btn" data-count="2">2</button>
+            <button type="button" class="field-count-btn" data-count="3">3</button>
+            <button type="button" class="field-count-btn" data-count="4">4</button>
+            <button type="button" class="field-count-btn" data-count="5">5</button>
+          </div>
+        </div>
+
+        <div class="su-terms">
+          <input type="checkbox" id="terms" />
+          <label for="terms">I agree to the terms and conditions.</label>
+        </div>
+
+        <div id="errorMessage"></div>
+
+        <div class="su-step2-buttons">
+          <button type="button" class="su-btn-secondary" onclick="window.location.href='signup2.html'">Back</button>
+          <button type="submit" class="su-btn-main">Finish</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Must be module -->
+<script type="module" src="signup3.js"></script>
+</body>
+</html>

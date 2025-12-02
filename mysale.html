@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriverese | My Sales</title>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="market-shared.css">
+    <link rel="stylesheet" href="mysale.css">
+</head>
+<body>
+
+    <!-- Marketplace Banner -->
+    <div class="market-banner">
+        <h1>Agricultural Marketplace</h1>
+        <p>Connect farmers with buyers for fresh, water-smart produce</p>
+    </div>
+
+    <!-- Top Tabs -->
+    <div class="market-tabs">
+        <button class="tab" onclick="navigateTo('market.html')">Browse Listings</button>
+        <button class="tab" onclick="navigateTo('yield.html')">Post Yield</button>
+        <button class="tab" onclick="navigateTo('myorders.html')">My Orders</button>
+        <button class="tab active" onclick="navigateTo('mysale.html')">My Sales</button>
+    </div>
+
+    <!-- Sales Section -->
+    <section class="page-section sales-section">
+        <div class="section-header">
+            <i class="fas fa-chart-line"></i>
+            <span>My Sales</span>
+        </div>
+
+        <div class="no-sales-box empty-state">
+            <i class="fas fa-chart-line empty-icon"></i>
+            <p class="empty-title">No Sales Yet</p>
+            <p class="empty-text">Post your yield to start selling in the marketplace</p>
+        </div>
+    </section>
+
+    <script src="mysale.js"></script>
+    <footer class="monitor-footer">
+    <div class="footer-item" onclick="navigate('dashboard.html')">
+        <i class="fa-solid fa-table-cells"></i>
+        <span>Dashboard</span>
+    </div>
+    <div class="footer-item" onclick="navigate('monitor.html')">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Insights</span>
+    </div>
+    <div class="footer-item" onclick="navigate('market.html')">
+        <i class="fa-solid fa-shopping-cart"></i>
+        <span>Market</span>
+    </div>
+    <div class="footer-item" onclick="navigate('alert.html')">
+        <i class="fa-solid fa-bell"></i>
+        <span>Alerts</span>
+    </div>
+    </footer>
+    <script>
+    function navigate(page) {
+    window.location.href = page;
+    }
+    </script>
+</body>
+</html>

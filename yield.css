@@ -1,0 +1,302 @@
+:root {
+  --green-main: #12b45a;
+  --green-dark: #0e7a3a;
+  --border-soft: #e5e7eb;
+  --text-muted: #6b7280;
+  --radius-md: 12px;
+  --shadow-button: 0 14px 40px rgba(18, 180, 90, 0.34);
+}
+
+/* -------------------------------------
+   POST YIELD FORM SECTION
+------------------------------------- */
+.page-main {
+  padding: 0 24px 40px;
+}
+
+.post-card {
+  padding-top: 10px;
+}
+
+.post-title {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.post-title .post-icon {
+  color: var(--green-main);
+  font-size: 22px;
+}
+
+.post-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* Form */
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / 3;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid var(--border-soft);
+  background: #f9fafb;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--green-main);
+  background: white;
+  box-shadow: 0px 0px 4px rgba(18, 180, 90, 0.3);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Submit Button */
+.btn-post {
+  background: var(--green-main);
+  border: none;
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: var(--shadow-button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-post:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------
+   TOAST MESSAGE
+------------------------------------- */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background: #111827;
+  padding: 12px 24px;
+  border-radius: 50px;
+  color: white;
+  font-size: 14px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, -10px) scale(1);
+}
+
+/* -------------------------------------
+   RESPONSIVE
+------------------------------------- */
+@media (max-width: 768px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .post-card { padding-top: 0; }
+}
+/* Unified Footer Styles - Clean & Minimal */
+.monitor-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 4px 20px;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    min-width: 60px;
+}
+
+.footer-item:hover {
+    background: #f5f8f6;
+}
+
+.footer-item i {
+    font-size: 22px;
+    color: #6b7280;
+    margin-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+.footer-item span,
+.footer-item h3,
+.footer-item div {
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0;
+    color: #6b7280;
+    transition: color 0.2s ease;
+    letter-spacing: 0.2px;
+}
+
+.footer-item.active i {
+    color: #0b8d27;
+}
+
+.footer-item.active span,
+.footer-item.active h3,
+.footer-item.active div {
+    color: #0b8d27;
+    font-weight: 600;
+}
+
+.footer-item:hover i,
+.footer-item:hover span,
+.footer-item:hover h3,
+.footer-item:hover div {
+    color: #0b8d27;
+}
+
+/* Graph Container Styles */
+.graphs-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .graphs-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .graphs-container {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 100%;
+    }
+}
+
+.graph-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.graph-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.graph-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eef3f1;
+}
+
+.graph-header i {
+    font-size: 20px;
+    color: #0b8d27;
+}
+
+.graph-header h3 {
+    flex: 1;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0b421a;
+}
+
+.current-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0b8d27;
+    background: #e8f5e9;
+    padding: 4px 12px;
+    border-radius: 12px;
+}
+
+.chart-canvas {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .monitor-container {
+        padding: 20px 15px 100px 15px;
+    }
+    
+    .title {
+        font-size: 22px;
+    }
+    
+    .tab {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}

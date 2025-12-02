@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts & Settings | Agriverse</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="alert.css">
+</head>
+<body>
+
+    <div class="alert-container">
+        <h1 class="alert-title"><i class="fa-solid fa-bell"></i> Alerts & Settings</h1>
+
+        <!-- Recent Alerts -->
+        <div class="alert-box">
+            <h2><i class="fa-regular fa-bell"></i> Recent Alerts</h2>
+            <div class="alert-empty">
+                <i class="fa-regular fa-clock"></i>
+                <p>No alerts yet</p>
+                <small>You’ll see important notifications here</small>
+            </div>
+        </div>
+
+        <!-- Settings -->
+        <div class="settings-box">
+            <h2><i class="fa-solid fa-gear"></i> Settings</h2>
+
+            <div class="profile-row">
+                <i class="fa-regular fa-user profile-icon"></i>
+                <div>
+                    <p><strong>harini</strong></p>
+                    <small>9080776321</small>
+                </div>
+            </div>
+
+            <div class="settings-details">
+                <div><strong>Village</strong><br>madurai</div>
+                <div><strong>District</strong><br>North Sikkim</div>
+                <div><strong>Main Crop</strong><br>Cabbage</div>
+                <div><strong>Fields</strong><br>2</div>
+            </div>
+
+            <div class="notif-toggle">
+                <span>Push Notifications</span>
+                <input type="checkbox" checked>
+            </div>
+        </div>
+
+        <!-- Logout Button -->
+        <button class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <footer class="bottom-nav">
+    <div onclick="location.href='dashboard.html'"><i class="fa-solid fa-table-cells"></i><span>Dashboard</span></div>
+    <div onclick="location.href='monitor.html'"><i class="fa-solid fa-chart-line"></i><span>Insights</span></div>
+    <div onclick="location.href='market.html'"><i class="fa-solid fa-shopping-cart"></i><span>Market</span></div>
+    <div class="active"><i class="fa-solid fa-bell"></i><span>Alerts</span></div>
+    </footer>
+
+
+    <script src="alert.js"></script>
+    <script>
+        function navigate(page) {
+    window.location.href = page;
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,441 @@
+/* =========================================================
+   AGRIVERSE - Sign Up Page
+   ========================================================= */
+
+:root {
+  --green-900: #0b421a;
+  --green-700: #0b8d27;
+  --muted: #6b7280;
+  --bg: #f4f7f6;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --radius-lg: 24px;
+  --radius-md: 14px;
+  --shadow-lg: 0 24px 80px rgba(15, 23, 42, 0.16);
+  --shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.10);
+  --transition: 180ms ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Inter", system-ui, sans-serif;
+  background: #e9f0ed;
+  color: #0f172a;
+}
+
+/* ---- Page center ---- */
+.su-page-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+/* ---- Card ---- */
+.su-card {
+  max-width: 520px;
+  width: 100%;
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Banner image */
+.su-banner img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card body */
+.su-body {
+  padding: 28px 32px 30px;
+}
+
+/* Header */
+.su-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.su-header h1 {
+  margin: 0 0 6px;
+  font-size: 26px;
+  color: var(--green-900);
+}
+
+.su-header p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ---- Stepper ---- */
+.su-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 14px 0 24px;
+  position: relative;
+}
+
+/* center connecting lines */
+.su-steps::before {
+  content: "";
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  top: 22px;
+  height: 2px;
+  background: #e5e7eb;
+  z-index: 0;
+}
+
+.su-step {
+  position: relative;
+  text-align: center;
+  width: 33.33%;
+  z-index: 1;
+}
+
+.su-step-icon,
+.su-step-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  margin: 0 auto 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.su-step-icon {
+  background: #22c55e;
+  color: white;
+  font-size: 14px;
+}
+
+.su-step-circle {
+  border: 2px solid #d1d5db;
+  background: #f9fafb;
+}
+
+.su-step-label {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.2;
+}
+
+.su-step-label small {
+  display: block;
+  font-size: 10px;
+}
+
+/* active step text */
+.su-step-active .su-step-label {
+  color: var(--green-900);
+}
+
+/* ---- Profile ---- */
+.su-profile {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.su-profile h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.su-profile p {
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.su-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.su-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 999px;
+  border: 2px solid #22a394;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  background: #f3faf7;
+}
+
+.su-avatar i {
+  font-size: 26px;
+  color: #22a394;
+}
+
+.su-upload-link {
+  font-size: 12px;
+  color: #0b8d27;
+  cursor: pointer;
+}
+
+/* ---- Form ---- */
+.su-form {
+  margin-top: 10px;
+}
+
+.su-field {
+  margin-bottom: 16px;
+}
+
+.su-field label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.su-field label i {
+  margin-right: 6px;
+  color: #6b7280;
+}
+
+.su-field input {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #f9fafb;
+  font-size: 14px;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.su-field input:focus {
+  border-color: var(--green-700);
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(11, 141, 39, 0.3);
+}
+
+/* email & phone row */
+.su-field-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.su-country-code {
+  flex: 0 0 115px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.su-flag {
+  font-size: 16px;
+}
+.su-code {
+  font-size: 13px;
+}
+
+/* bottom text & button */
+.su-bottom-text {
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.su-link {
+  color: #0b8d27;
+  font-weight: 600;
+}
+
+.su-link:hover {
+  text-decoration: underline;
+}
+
+/* main button */
+.su-btn-main {
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #000;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+}
+
+.su-btn-main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.35);
+  opacity: 0.96;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 520px) {
+  .su-card {
+    border-radius: 18px;
+  }
+  .su-body {
+    padding: 24px 18px 24px;
+  }
+}
+/* Extra styles for step 2 & 3 */
+
+.su-password-block h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+.su-pass-sub {
+  margin: 0 0 14px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.su-password-hints {
+  margin: 0 0 14px;
+  padding-left: 18px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.su-step2-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.su-btn-secondary {
+  flex: 0 0 30%;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  background: #f9fafb;
+  color: #111827;
+}
+
+.su-btn-main {
+  flex: 1;
+}
+
+/* dropdown / select */
+.su-field select {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #f9fafb;
+  font-size: 14px;
+}
+
+/* terms checkbox row */
+.su-terms {
+  margin-top: 4px;
+}
+/* ---------------------------
+   Field Name Input
+--------------------------- */
+#fieldName {
+  width: 100%;
+}
+
+/* ---------------------------
+   Error & Success Message
+--------------------------- */
+#errorMessage {
+  display: none;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid red;
+  background: #ffe6e6;
+  color: red;
+  font-weight: 500;
+}
+
+#errorMessage.success {
+  border-color: green;
+  background: #e7ffe6;
+  color: green;
+}
+.field-count-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.field-count-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 20px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.field-count-btn.active {
+  background: #0b8d27;
+  color: white;
+  border-color: #0b8d27;
+}
+.field-count-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.field-count-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 20px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.field-count-btn.active {
+  background: #0b8d27;
+  color: white;
+  border-color: #0b8d27;
+}
+button {
+   cursor: pointer;
+}
+

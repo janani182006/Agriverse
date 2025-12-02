@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Crop - AGRIVERSE</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <img src="assets/logo.png" class="logo">
+  <nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="pest-detection.html">Pest Detection</a>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<h2>Select Your Crop</h2>
+
+<div class="crop-list">
+
+  <div class="crop-card" onclick="selectCrop('Paddy')">
+    <h3>Paddy</h3>
+  </div>
+
+  <div class="crop-card" onclick="selectCrop('Cabbage')">
+    <h3>Cabbage</h3>
+  </div>
+
+  <div class="crop-card" onclick="selectCrop('Cardamom')">
+    <h3>Cardamom</h3>
+  </div>
+
+  <div class="crop-card" onclick="selectCrop('Cauliflower')">
+    <h3>Cauliflower</h3>
+  </div>
+
+</div>
+
+<script src="js/crop.js"></script>
+</body>
+</html>

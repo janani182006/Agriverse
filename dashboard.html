@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRIVERSE Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="logo.jpg">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<header class="dashboard-header">
+    <div class="header-left">
+        <h1>AGRIVERSE</h1>
+        
+    </div>
+
+    <div class="header-right">
+        <select id="fieldSelect">
+            <option>Field 1</option>
+            <option>Field 2</option>
+            <option>Field 3</option>
+        </select>
+    </div>
+</header>
+
+<hr class="header-line">
+
+
+<div class="cards-container">
+    <div class="card">
+        <div class="icon"><i class="fa-solid fa-droplet"></i></div>
+        <h2>Soil Moisture</h2>
+        <div class="value">65%</div>
+        <p class="status">Status: Normal</p>
+        <button onclick="openGraph('soil')">View Graph →</button>
+    </div>
+
+    <div class="card">
+        <div class="icon"><i class="fa-solid fa-temperature-half"></i></div>
+        <h2>Temperature</h2>
+        <div class="value">28°C</div>
+        <p class="status">Status: Normal</p>
+        <button onclick="openGraph('temp')">View Graph →</button>
+    </div>
+
+    <div class="card">
+        <div class="icon"><i class="fa-solid fa-leaf"></i></div>
+        <h2>NPK Levels</h2>
+        <div class="value">45/38/42</div>
+        <p class="status">Status: Balanced</p>
+        <button onclick="openGraph('npk')">View Graph →</button>
+    </div>
+
+    <div class="card">
+        <div class="icon"><i class="fa-solid fa-sun"></i></div>
+        <h2>PAR / Light</h2>
+        <div class="value">850 µmol/m²/s</div>
+        <p class="status">Status: Normal</p>
+        <button onclick="openGraph('par')">View Graph →</button>
+    </div>
+
+    <div class="card pump-card">
+        <div class="icon"><i class="fa-solid fa-plug"></i></div>
+        <h2>Pump Control</h2>
+        <button id="pumpBtn">TURN ON</button>
+        <p id="pumpStatus">Pump is OFF</p>
+    </div>
+</div>
+
+<!-- Crop Intelligence Section -->
+<div class="crop-intelligence-section">
+    <h2 class="section-title"><i class="fa-solid fa-brain"></i> Crop Intelligence</h2>
+    
+    <div class="intelligence-grid">
+        <!-- Crop Info Card -->
+        <div class="intelligence-card crop-info-card">
+            <h3><i class="fa-solid fa-seedling"></i> Crop Info</h3>
+            <div class="info-row">
+                <span class="info-label">Crop:</span>
+                <span class="info-value" id="cropName">Paddy</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Stage:</span>
+                <span class="info-value" id="cropStage">Tillering</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Days:</span>
+                <span class="info-value" id="cropDays">45</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Health:</span>
+                <span class="info-value health-good" id="cropHealth">
+                    <i class="fa-solid fa-check-circle"></i> Good
+                </span>
+            </div>
+        </div>
+
+        <!-- Stress Indicators Card -->
+        <div class="intelligence-card stress-card">
+            <h3><i class="fa-solid fa-exclamation-triangle"></i> Stress Indicators</h3>
+            <div class="stress-item">
+                <span class="stress-label">Water Stress</span>
+                <span class="stress-value low">
+                    Low <i class="fa-solid fa-arrow-up"></i>
+                </span>
+            </div>
+            <div class="stress-item">
+                <span class="stress-label">Nutrient Stress</span>
+                <span class="stress-value low">
+                    Low <i class="fa-solid fa-arrow-up"></i>
+                </span>
+            </div>
+            <div class="stress-item">
+                <span class="stress-label">Light Stress</span>
+                <span class="stress-value low">
+                    Low <i class="fa-solid fa-arrow-up"></i>
+                </span>
+            </div>
+        </div>
+
+        <!-- Comparison Table Card -->
+        <div class="intelligence-card comparison-card">
+            <h3><i class="fa-solid fa-table"></i> Parameter Comparison</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Current</th>
+                        <th>Ideal</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Soil Moisture</td>
+                        <td id="currentMoisture">65%</td>
+                        <td>60-80%</td>
+                        <td><i class="fa-solid fa-check-circle status-ok"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Temperature</td>
+                        <td id="currentTemp">28°C</td>
+                        <td>25-30°C</td>
+                        <td><i class="fa-solid fa-check-circle status-ok"></i></td>
+                    </tr>
+                    <tr>
+                        <td>NPK</td>
+                        <td id="currentNPK">42</td>
+                        <td>40-60</td>
+                        <td><i class="fa-solid fa-check-circle status-ok"></i></td>
+                    </tr>
+                    <tr>
+                        <td>PAR</td>
+                        <td id="currentPAR">850</td>
+                        <td>800-1200</td>
+                        <td><i class="fa-solid fa-check-circle status-ok"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Recommendations Row -->
+    <div class="recommendations-row">
+        <!-- Irrigation Recommendation -->
+        <div class="recommendation-card irrigation-card">
+            <div class="rec-header">
+                <i class="fa-solid fa-droplet"></i>
+                <h3>Irrigation Recommendation</h3>
+            </div>
+            <div class="rec-content">
+                <p class="rec-main">Irrigate for: <strong>15 minutes</strong></p>
+                <p class="rec-sub">Best Time: <strong>Morning</strong></p>
+                <p class="rec-note">Based on current soil moisture and crop stage</p>
+            </div>
+        </div>
+
+        <!-- Organic Advisory -->
+        <div class="recommendation-card organic-card">
+            <div class="rec-header">
+                <i class="fa-solid fa-leaf"></i>
+                <h3>Organic Advisory</h3>
+                <span class="organic-badge">100% Organic Only</span>
+            </div>
+            <div class="rec-content">
+                <p class="rec-main"><strong>Vermicompost</strong></p>
+                <p class="rec-sub">Apply 2 kg per plant. Mix with soil around root zone.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="dashboard-footer">
+    
+    <div class="footer-item active" onclick="navigate('dashboard.html')">
+        <i class="fa-solid fa-table-cells"></i>
+        <h3>Dashboard</h3>
+    </div>
+    <div class="footer-item" onclick="navigate('monitor.html')">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Insights</h3>
+    </div>
+    
+    <div class="footer-item" onclick="navigate('Market.html')">
+        <i class="fa-solid fa-shopping-cart"></i>
+        <h3>Market</h3>
+    </div>
+    <div class="footer-item" onclick="navigate('alert.html')">
+        <i class="fa-solid fa-bell"></i>
+        <h3>Alerts</h3>
+    </div>
+</footer>
+
+
+<script src="dashboard.js"></script>
+</body>
+</html>

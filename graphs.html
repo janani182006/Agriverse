@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphs | AGRIVERSE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="monitor.css">
+    <link rel="icon" href="logo.jpg">
+</head>
+<body>
+
+<div class="monitor-container">
+    <h1 class="title">Graph Analysis</h1>
+
+    <!-- Time Range Selection -->
+    <div class="time-buttons">
+        <button class="time-btn" data-range="1hr">1hr</button>
+        <button class="time-btn active" data-range="24hrs">24hrs</button>
+        <button class="time-btn" data-range="7days">7days</button>
+    </div>
+
+    <!-- Parameter Graphs Container -->
+    <div class="graphs-container">
+        <!-- Soil Moisture Graph -->
+        <div class="graph-card">
+            <div class="graph-header">
+                <i class="fa-solid fa-droplet"></i>
+                <h3>Soil Moisture</h3>
+                <span class="current-value" id="moistureValue">75.5%</span>
+            </div>
+            <canvas id="moistureChart" class="chart-canvas"></canvas>
+        </div>
+
+        <!-- Soil Temperature Graph -->
+        <div class="graph-card">
+            <div class="graph-header">
+                <i class="fa-solid fa-temperature-half"></i>
+                <h3>Soil Temperature</h3>
+                <span class="current-value" id="tempValue">24.9°C</span>
+            </div>
+            <canvas id="tempChart" class="chart-canvas"></canvas>
+        </div>
+
+        <!-- Humidity Graph -->
+        <div class="graph-card">
+            <div class="graph-header">
+                <i class="fa-solid fa-water"></i>
+                <h3>Humidity</h3>
+                <span class="current-value" id="humidityValue">64.5%</span>
+            </div>
+            <canvas id="humidityChart" class="chart-canvas"></canvas>
+        </div>
+
+        <!-- NPK Levels Graph -->
+        <div class="graph-card">
+            <div class="graph-header">
+                <i class="fa-solid fa-leaf"></i>
+                <h3>NPK Levels</h3>
+                <span class="current-value" id="npkValue">65/38/55</span>
+            </div>
+            <canvas id="npkChart" class="chart-canvas"></canvas>
+        </div>
+
+        <!-- PAR Light Graph -->
+        <div class="graph-card">
+            <div class="graph-header">
+                <i class="fa-solid fa-sun"></i>
+                <h3>PAR Light</h3>
+                <span class="current-value" id="parValue">425 µmol/m²/s</span>
+            </div>
+            <canvas id="parChart" class="chart-canvas"></canvas>
+        </div>
+    </div>
+</div>
+
+<footer class="monitor-footer">
+    <div class="footer-item" onclick="navigate('dashboard.html')">
+        <i class="fa-solid fa-table-cells"></i>
+        <span>Dashboard</span>
+    </div>
+    <div class="footer-item" onclick="navigate('monitor.html')">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Insights</span>
+    </div>
+    <div class="footer-item" onclick="navigate('alerts.html')">
+        <i class="fa-solid fa-bell"></i>
+        <span>Alerts</span>
+    </div>
+</footer>
+
+<script src="monitor.js"></script>
+</body>
+</html>
+

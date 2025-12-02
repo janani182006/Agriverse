@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help Center | Agriverse</title>
+  <style>
+    /* ===== CSS STARTS HERE ===== */
+    body {
+      font-family: "Inter", sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .help-center {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    .help-header {
+      background: #eaf7e9;
+      padding: 25px;
+      border-radius: 14px;
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .help-header h2 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 600;
+      color: #2f6e4e;
+    }
+
+    .help-header p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    /* FAQ Category */
+    .faq-category {
+      margin: 15px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: slideUp 0.6s ease forwards;
+    }
+
+    .faq-category:nth-child(2) { animation-delay: 0.2s; }
+    .faq-category:nth-child(3) { animation-delay: 0.3s; }
+    .faq-category:nth-child(4) { animation-delay: 0.4s; }
+    .faq-category:nth-child(5) { animation-delay: 0.5s; }
+
+    .faq-category:hover {
+      transform: scale(1.005);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    .faq-category-header {
+      padding: 18px 22px;
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-category.active {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .faq-category.active .arrow {
+      transform: rotate(90deg);
+    }
+
+    /* FAQ Content */
+    .faq-content {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      padding: 0 22px;
+      transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq-category.active .faq-content {
+      max-height: 500px;
+      opacity: 1;
+      padding-bottom: 15px;
+    }
+
+    .faq-content p {
+      margin: 12px 0;
+      font-size: 15px;
+      padding-left: 12px;
+      border-left: 3px solid #b8dfb2;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-content p:hover {
+      transform: translateX(5px);
+    }
+
+    /* Category Backgrounds */
+    .green { background: #e7f6e7; }
+    .blue { background: #eef3ff; }
+    .teal { background: #e5f6f5; }
+    .beige { background: #f7f5e8; }
+    .orange { background: #fff2e6; }
+
+    /* Support Section */
+    .help-support {
+      margin-top: 35px;
+      background: #eaf7e9;
+      padding: 25px;
+      text-align: center;
+      border-radius: 12px;
+      animation: fadeIn 1s ease;
+    }
+
+    .help-support h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #2f6e4e;
+    }
+
+    .support-buttons button {
+      margin: 6px;
+      padding: 10px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: white;
+      color: #2f6e4e;
+      border: 1px solid #4ca772;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .support-buttons button:hover {
+      background: #4ca772;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .faq-category-header { flex-direction: column; align-items: flex-start; }
+    }
+    /* ===== CSS ENDS HERE ===== */
+  </style>
+</head>
+<body>
+
+<section class="help-center">
+  <div class="help-header">
+    <h2>How can we help you today?</h2>
+    <p>Browse through our frequently asked questions organized by category.</p>
+  </div>
+
+  <!-- FAQ Categories with Questions and Answers -->
+  <div class="faq-category green">
+    <div class="faq-category-header">
+      <span>🌱 Getting Started</span>
+      <span>3 questions ▾</span>
+    </div>
+    <div class="faq-content">
+      <p><strong>What is AGRIVERSE?</strong><br>Agriverse is a smart farming platform...</p>
+      <p><strong>How do I set up sensors?</strong><br>Place sensors in your field...</p>
+      <p><strong>How do I manage fields?</strong><br>You can add multiple fields...</p>
+    </div>
+  </div>
+
+  <div class="faq-category blue">
+    <div class="faq-category-header">
+      <span>💧 Irrigation & Monitoring</span>
+      <span>3 questions ▾</span>
+    </div>
+    <div class="faq-content">
+      <p><strong>How does the pump control work?</strong><br>The pump activates...</p>
+      <p><strong>Can I automate irrigation?</strong><br>Yes, you can schedule it...</p>
+      <p><strong>How accurate are sensors?</strong><br>They offer 90%+ accuracy...</p>
+    </div>
+  </div>
+
+  <div class="faq-category teal">
+    <div class="faq-category-header">
+      <span>🌿 Crops & Advisory</span>
+      <span>3 questions ▾</span>
+    </div>
+    <div class="faq-content">
+      <p><strong>What crops are supported?</strong><br>Paddy, Cabbage, Cauliflower...</p>
+      <p><strong>What is Crop Intelligence?</strong><br>AI-driven advisory...</p>
+      <p><strong>What is Farmer Advisory?</strong><br>Personalized suggestions...</p>
+    </div>
+  </div>
+
+  <div class="faq-category beige">
+    <div class="faq-category-header">
+      <span>🐝 Organic Farming</span>
+      <span>2 questions ▾</span>
+    </div>
+    <div class="faq-content">
+      <p><strong>Organic fertilizer?</strong><br>We recommend both...</p>
+      <p><strong>Pest detection?</strong><br>Using AI image analysis...</p>
+    </div>
+  </div>
+
+  <div class="faq-category orange">
+    <div class="faq-category-header">
+      <span>🔔 Alerts & Settings</span>
+      <span>1 question ▾</span>
+    </div>
+    <div class="faq-content">
+      <p><strong>What are alerts?</strong><br>Instant notification system...</p>
+    </div>
+  </div>
+
+  <div class="help-support">
+    <h3>Still need help?</h3>
+    <p>If you couldn't find the answer you're looking for, we’re here to help!</p>
+    <div class="support-buttons">
+      <button>📞 Contact Agriculture Officer</button>
+      <button>⚙️ Visit Settings</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ===== JavaScript STARTS HERE =====
+  document.querySelectorAll(".faq-category").forEach((category) => {
+    const header = category.querySelector(".faq-category-header");
+
+    header.innerHTML = `
+      <span>${header.children[0].innerHTML}</span>
+      <span><span>${header.children[1].innerHTML.split(" ")[0]} questions</span> <span class="arrow">▸</span></span>
+    `;
+
+    header.addEventListener("click", () => {
+      document.querySelectorAll(".faq-category").forEach((item) => {
+        if (item !== category) item.classList.remove("active");
+      });
+      category.classList.toggle("active");
+    });
+  });
+  // ===== JavaScript ENDS HERE =====
+</script>
+
+</body>
+</html>

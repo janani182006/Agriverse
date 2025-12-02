@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fertilizer | AGRIVERSE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="logo.jpg">
+  <link rel="stylesheet" href="fertilizer.css">
+  <script src="fertilizer.js" defer></script>
+</head>
+<body>
+  <div class="fertilizer-container">
+    <h1 class="title">Insights & Analysis</h1>
+
+    <!-- Tabs -->
+    <div class="monitor-tabs">
+      <button class="tab" onclick="navigate('pest.html')">Pest</button>
+      <button class="tab active">Fertilizer</button>
+      <button class="tab" onclick="navigate('advisory.html')">Advisory</button>
+    </div>
+
+    <!-- Fertilizer Advice Section -->
+    <h2 class="fert-title"><i class="fa-solid fa-seedling"></i>Fertilizer Advice</h2>
+
+    <div class="fert-boxes">
+      <div class="fert-box">
+        <h3>Nitrogen (N)</h3>
+        <div class="value">45</div>
+        <p class="status moderate">Moderate</p>
+      </div>
+
+      <div class="fert-box">
+        <h3>Phosphorus (P)</h3>
+        <div class="value">38</div>
+        <p class="status low">Low</p>
+      </div>
+
+      <div class="fert-box">
+        <h3>Potassium (K)</h3>
+        <div class="value">52</div>
+        <p class="status normal">Normal</p>
+      </div>
+    </div>
+
+    <!-- Suggestions -->
+    <div class="suggestions-box">
+      <h3>Organic Fertilizer Suggestions</h3>
+      <ul>
+        <li><b>Vermicompost</b> – Rich in nitrogen, improves soil structure</li>
+        <li><b>Bone Meal</b> – Excellent phosphorus source for flowering</li>
+        <li><b>Wood Ash</b> – Natural potassium boost, alkaline soil amendment</li>
+      </ul>
+      
+    </div>
+    <div class="weekly-tip">
+    <div class="tip-icon"><i class="fa-solid fa-lightbulb"></i> Weekly Tip</div>
+    <p>Mulching with organic matter conserves moisture and adds nutrients gradually</p>
+    </div>
+
+    
+  
+  <!-- Fixed Footer -->
+  <footer class="monitor-footer">
+    <div class="footer-item" onclick="navigate('dashboard.html')">
+      <i class="fa-solid fa-table-cells"></i>
+      <span>Dashboard</span>
+    </div>
+    <div class="footer-item" onclick="navigate('monitor.html')">
+      <i class="fa-solid fa-chart-line"></i>
+      <span>Insights</span>
+    </div>
+    <div class="footer-item" onclick="navigate('market.html')">
+      <i class="fa-solid fa-shopping-cart"></i>
+      <span>Market</span>
+    </div>
+    <div class="footer-item" onclick="navigate('alerts.html')">
+      <i class="fa-solid fa-bell"></i>
+      <span>Alerts</span>
+    </div>
+  </footer>
+</body>
+</html>

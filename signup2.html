@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up – Step 2 | AGRIVERSE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="logo.jpg">
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+
+  <div class="su-page-bg">
+    <div class="su-card">
+
+      <div class="su-banner">
+        <img src="sign.png" alt="Farm banner"/>
+      </div>
+
+      <div class="su-body">
+
+        <div class="su-header">
+          <h1>Sign Up</h1>
+          <p>Create a strong password for your AGRIVERSE account.</p>
+        </div>
+
+        <div class="su-steps">
+          <div class="su-step su-step-active">
+            <div class="su-step-icon"><i class="fa-solid fa-check"></i></div>
+            <span class="su-step-label">Step 1<br><small>User Details</small></span>
+          </div>
+
+          <div class="su-step su-step-active">
+            <div class="su-step-icon"><i class="fa-solid fa-check"></i></div>
+            <span class="su-step-label">Step 2<br><small>Password</small></span>
+          </div>
+
+          <div class="su-step">
+            <div class="su-step-circle"></div>
+            <span class class="su-step-label">Step 3<br><small>Cultivation</small></span>
+          </div>
+        </div>
+
+        <form id="signupStep2Form" class="su-form">
+
+          <div class="su-password-block">
+            <h3>Create Password</h3>
+            <p class="su-pass-sub">Use a strong password for better security.</p>
+          </div>
+
+          <div class="su-field">
+            <label for="password"><i class="fa-solid fa-lock"></i> Password</label>
+            <input id="password" type="password" placeholder="At least 8 characters" required />
+          </div>
+
+          <div class="su-field">
+            <label for="confirmPassword"><i class="fa-solid fa-check-circle"></i> Confirm Password</label>
+            <input id="confirmPassword" type="password" placeholder="Re-enter password" required />
+          </div>
+
+          <ul class="su-password-hints">
+            <li>At least 8 characters</li>
+            <li>Must contain letters and numbers</li>
+            <li>Add symbols for extra strength</li>
+          </ul>
+
+          <div class="su-step2-buttons">
+            <a href="signup.html" class="su-btn-secondary">Back</a>
+            <button type="submit" class="su-btn-main">Continue</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPORTANT: module script -->
+  <script type="module" src="signup2.js"></script>
+</body>
+</html>

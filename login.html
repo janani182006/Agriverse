@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Log-in - AGRIVERSE</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+  <link rel="icon" href="logo.jpg">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Icons (optional) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --green-900: #0b421a;
+      --green-700: #0b8d27;
+      --muted: #6b7280;
+      --bg: #f4f7f6;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --radius-lg: 24px;
+      --radius-md: 12px;
+      --shadow-lg: 0 24px 80px rgba(15, 23, 42, 0.16);
+      --shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.10);
+      --transition: 180ms ease-in-out;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Inter", system-ui, sans-serif;
+      background: radial-gradient(circle at top left, #e9f5ee, #f4f7f6 45%, #edf4ff);
+      color: #0f172a;
+    }
+
+    .page-bg {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .login-card {
+      display: flex;
+      max-width: 1020px;
+      width: 100%;
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .login-image {
+      flex: 0 0 45%;
+      background: #000;
+    }
+
+    .login-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .login-form {
+      flex: 1;
+      padding: 40px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .login-header h1 {
+      margin: 0 0 6px;
+      font-size: 28px;
+      color: var(--green-900);
+    }
+
+    .login-header p {
+      margin: 0 0 24px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .field-group {
+      margin-bottom: 18px;
+    }
+
+    .field-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .field-group input {
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      font-size: 14px;
+      outline: none;
+      background: #f9fafb;
+      transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    .field-group input:focus {
+      border-color: var(--green-700);
+      box-shadow: 0 0 0 1px rgba(11,141,39,0.3);
+      background: #ffffff;
+    }
+
+    .btn-main {
+      width: 100%;
+      padding: 11px 16px;
+      border-radius: var(--radius-md);
+      border: none;
+      font-weight: 600;
+      font-size: 15px;
+      background: #000000;
+      color: #ffffff;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+    }
+
+    .btn-main:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.35);
+      opacity: 0.96;
+    }
+
+    .bottom-text {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .link-strong {
+      color: var(--green-700);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .login-image { display: none; }
+    }
+    .guest-btn {
+  background: #e5e7eb;
+  color: #111827;
+  margin-top: 8px;
+  }
+
+.guest-btn:hover {
+  background: #d1d5db;
+  transform: translateY(-2px);
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="page-bg">
+    <div class="login-card">
+      <div class="login-image">
+        <img src="farmer.png" alt="Farmer in field">
+      </div>
+
+      <div class="login-form">
+        <div class="login-header">
+          <h1>Login</h1>
+          <p>Login to track your crops and manage from home easily.</p>
+        </div>
+
+        <form id="loginForm">
+          <div class="field-group">
+            <label for="email">Email Address</label>
+            <input id="email" type="email" placeholder="Enter your email address" required>
+          </div>
+
+          <div class="field-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter your password" required>
+          </div>
+
+          <button type="submit" class="btn-main">Login</button>
+          <button type="button" class="btn-main guest-btn" id="guestBtn">
+          Continue as Guest
+          </button>
+
+          <p class="bottom-text">
+            Don’t have an account?
+            <a href="signup.html" class="link-strong">Sign up</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="login.js"></script>
+  
+</body>
+</html>

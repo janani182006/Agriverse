@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agriverse | Post Yield</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (for small icons, optional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="market-shared.css">
+  <link rel="stylesheet" href="yield.css">
+</head>
+<body>
+
+  <!-- ===== TOP NAVBAR ===== -->
+  
+
+  <!-- ===== HERO / BANNER ===== -->
+  <div class="market-banner">
+    <h1>Agricultural Marketplace</h1>
+    <p>Connect farmers with buyers for fresh, water-smart produce</p>
+  </div>
+
+  <!-- ===== MARKET TABS ===== -->
+  <div class="market-tabs">
+      <button class="tab" onclick="window.location.href='market.html'">
+      Browse Listings
+      </button>
+      <button class="tab active">
+        Post Yield
+      </button>
+      <button class="tab" onclick="window.location.href='myorders.html'">
+        My Orders
+      </button>
+      <button class="tab" onclick="window.location.href='mysale.html'">
+        My Sales
+      </button>
+  </div>
+
+  <!-- ===== MAIN POST-YIELD CARD ===== -->
+  <main class="page-main">
+    <section class="page-section post-card">
+      <h2 class="post-title">
+        <span class="post-icon">＋</span>
+        Post Your Yield
+      </h2>
+      <p class="post-subtitle">
+        List your produce for sale in the marketplace
+      </p>
+
+      <form id="postYieldForm" class="post-form">
+        <!-- Row 1: crop + quantity -->
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="cropType">Crop Type</label>
+            <select id="cropType" required>
+              <option value="" disabled selected>Select crop</option>
+              <option value="Cabbage">Cabbage</option>
+              <option value="Cauliflower">Cauliflower</option>
+              <option value="Paddy">Paddy</option>
+              <option value="Tomato">Tomato</option>
+              <option value="Potato">Potato</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">Quantity (kg)</label>
+            <input
+              type="number"
+              id="quantity"
+              placeholder="Enter quantity"
+              min="1"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Row 2: price + image -->
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="price">Price per kg (₹)</label>
+            <input
+              type="number"
+              id="price"
+              placeholder="Enter price per kg"
+              min="1"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="productPhoto">Product Photo</label>
+            <input type="file" id="productPhoto" accept="image/*" />
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group full-width">
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            rows="4"
+            placeholder="Describe your produce (quality, variety, any special notes)..."
+          ></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn-post">
+          <i class="fa-solid fa-box-open"></i>
+          <span>Post Listing</span>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Toast / message -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="yield.js"></script>
+  <footer class="monitor-footer">
+    <div class="footer-item" onclick="navigate('dashboard.html')">
+        <i class="fa-solid fa-table-cells"></i>
+        <span>Dashboard</span>
+    </div>
+    <div class="footer-item" onclick="navigate('monitor.html')">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Insights</span>
+    </div>
+    <div class="footer-item" onclick="navigate('market.html')">
+        <i class="fa-solid fa-shopping-cart"></i>
+        <span>Market</span>
+    </div>
+    <div class="footer-item" onclick="navigate('alert.html')">
+        <i class="fa-solid fa-bell"></i>
+        <span>Alerts</span>
+    </div>
+    </footer>
+    <script>
+    function navigate(page) {
+    window.location.href = page;
+    }
+    </script>
+</body>
+</html>

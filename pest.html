@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pest Detection | AGRIVERSE</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="logo.jpg">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="pest.css">
+</head>
+<body>
+
+<div class="pest-container">
+    <h1 class="title">Insights & Analysis</h1>
+
+    <!-- TABS -->
+    <div class="monitor-tabs">
+        <button class="tab active">Pest</button>
+        <button class="tab" onclick="navigate('fertilizer.html')">Fertilizer</button>
+        <button class="tab" onclick="navigate('advisory.html')">Advisory</button>
+    </div>
+
+    <!-- Pest Detection -->
+    <section class="pest-section">
+        <h2><i class="fa-solid fa-bug"></i> Pest Detection</h2>
+
+        <div class="crop-select">
+            <label><i class="fa-solid fa-seedling"></i> Select Crop</label>
+            <select id="cropSelect">
+                <option value="" disabled selected>Select crop</option>
+                <option value="paddy">Paddy</option>
+                <option value="cardamom">Cardamom</option>
+                <option value="cauliflower">Cauliflower</option>
+            </select>
+        </div>
+
+        <!-- Upload Button -->
+        <button class="upload-btn" onclick="triggerUpload()">
+            <i class="fa-solid fa-upload"></i> Upload or Capture Image
+        </button>
+        <input type="file" id="imageInput" accept="image/*" capture="camera" hidden>
+
+        <!-- Image Preview Container -->
+        <div class="image-preview" id="imagePreview">
+            <p>Image preview will appear here</p>
+        </div>
+
+        <!-- AI Detection Result -->
+        <div class="detection-result">
+            <h3>AI Detection Result</h3>
+            <p><strong>Pest/Disease:</strong> <span id="pestName">Awaiting image...</span></p>
+            <p><strong>Severity:</strong> <span id="severity">-</span></p>
+            <p><strong>Organic Remedy:</strong> <span id="remedy">-</span></p>
+        </div>
+    </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="monitor-footer">
+    <div class="footer-item" onclick="navigate('dashboard.html')">
+        <i class="fa-solid fa-table-cells"></i>
+        <span>Dashboard</span>
+    </div>
+    <div class="footer-item" onclick="navigate('monitor.html')">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Insights</span>
+    </div>
+    <div class="footer-item" onclick="navigate('market.html')">
+        <i class="fa-solid fa-shopping-cart"></i>
+        <span>Market</span>
+    </div>
+    <div class="footer-item" onclick="navigate('alerts.html')">
+        <i class="fa-solid fa-bell"></i>
+        <span>Alerts</span>
+    </div>
+</footer>
+
+<script src="pest.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor | AGRIVERSE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="logo.jpg">
+    <link rel="stylesheet" href="monitor.css">
+</head>
+<body>
+
+<div class="monitor-container">
+    <h1 class="title">Insights & Analysis</h1>
+
+    <!-- Tabs -->
+    <div class="monitor-tabs">
+        <button class="tab active" onclick="navigate('pest.html')">Pest</button>
+        <button class="tab" onclick="navigate('fertilizer.html')">Fertilizer</button>
+        <button class="tab" onclick="navigate('advisory.html')">Advisory</button>
+    </div>
+
+</div>
+
+<script>
+    // Redirect to pest page by default
+    window.location.href = 'pest.html';
+</script>
+
+<footer class="monitor-footer">
+    <div class="footer-item" onclick="navigate('dashboard.html')">
+        <i class="fa-solid fa-table-cells"></i>
+        <span>Dashboard</span>
+    </div>
+
+    <div class="footer-item active" onclick="navigate('monitor.html')">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Insights</span>
+    </div>
+
+    <div class="footer-item" onclick="navigate('market.html')">  <!-- CHECK THIS FILE NAME -->
+        <i class="fa-solid fa-shopping-cart"></i>  <!-- UPDATED ICON -->
+        <span>Market</span>
+    </div>
+
+    
+</footer>
+
+
+
+
+<script src="monitor.js"></script>
+</body>
+</html>

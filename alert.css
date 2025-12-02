@@ -1,0 +1,149 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7f5;
+    margin: 0;
+    padding: 0;
+}
+
+.alert-container {
+    max-width: 900px;
+    margin: 20px auto 90px;
+    padding: 20px;
+}
+
+.alert-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.alert-box, .settings-box {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e0e5e0;
+    margin-bottom: 25px;
+}
+
+.alert-box h2, .settings-box h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.alert-empty {
+    text-align: center;
+    padding: 30px 0;
+    color: #6b7280;
+}
+
+.alert-empty i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #a0a0a0;
+}
+
+.profile-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.profile-icon {
+    width: 36px;
+    height: 36px;
+    background: #eaf8ee;
+    color: #2b9348;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.settings-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.notif-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.logout-btn {
+    width: 100%;
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #d62828;
+}
+
+/* Bottom navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ddd;
+}
+
+.bottom-nav div {
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    color: #444;
+}
+
+.bottom-nav div i {
+    display: block;
+    font-size: 18px;
+}
+
+.bottom-nav .active {
+    color: #2b9348;
+    font-weight: 600;
+}
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 9999; /* Ensure it's on top */
+}
+
+.bottom-nav div {
+    cursor: pointer;
+    text-align: center;
+    color: #666;
+}
+
+.bottom-nav div.active {
+    color: #1E9E60; /* Active green */
+}
+
+.bottom-nav i {
+    font-size: 18px;
+    display: block;
+}

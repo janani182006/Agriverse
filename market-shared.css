@@ -1,0 +1,150 @@
+:root {
+    --brand-green: #1baf4e;
+    --brand-green-dark: #0a5d3a;
+    --brand-blue: #21a0dd;
+    --brand-bg: #f3f6f4;
+    --card-bg: #ffffff;
+    --card-radius: 18px;
+    --card-shadow: 0 12px 30px rgba(10, 33, 24, 0.08);
+    --border-soft: #e3e8e3;
+    --text-muted: #5e6b61;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--brand-bg);
+    color: #1d1f1e;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.market-banner {
+    background: linear-gradient(90deg, var(--brand-green), var(--brand-blue));
+    padding: 54px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.market-banner h1 {
+    margin: 0 0 8px;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.market-banner p {
+    margin: 0;
+    font-size: 17px;
+    opacity: 0.92;
+}
+
+.market-tabs {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    background: #f7fbf7;
+    border-radius: 999px;
+    padding: 6px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 6px;
+}
+
+.market-tabs .tab {
+    border: none;
+    background: transparent;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #406147;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.market-tabs .tab:hover {
+    background: rgba(27, 175, 78, 0.08);
+}
+
+.market-tabs .tab.active {
+    background: #fff;
+    color: var(--brand-green-dark);
+    box-shadow: 0 8px 22px rgba(5, 38, 19, 0.14);
+    font-weight: 600;
+}
+
+.page-main {
+    padding: 0 24px 40px;
+}
+
+.page-section {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    padding: 28px 32px;
+    box-shadow: var(--card-shadow);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #263029;
+}
+
+.section-header i {
+    font-size: 22px;
+    color: var(--brand-green);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 48px 16px;
+    color: var(--text-muted);
+}
+
+.empty-icon {
+    font-size: 40px;
+    color: var(--brand-green);
+    margin-bottom: 16px;
+}
+
+.empty-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d332f;
+    margin-bottom: 6px;
+}
+
+.empty-text {
+    font-size: 15px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .market-tabs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-section {
+        padding: 24px;
+        margin-bottom: 20px;
+    }
+
+    .market-banner h1 {
+        font-size: 26px;
+    }
+}
+
